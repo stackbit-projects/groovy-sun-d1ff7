@@ -1,0 +1,423 @@
+stackbitVersion: ~0.3.0
+dataDir: website
+pagesDir: website/content
+models:
+  blog:
+    type: page
+    label: Blog
+    folder: blog
+    match: '*'
+    fields:
+      - type: string
+        name: title
+        label: Title
+      - type: datetime
+        name: date
+        label: Date
+      - type: boolean
+        name: draft
+        label: Draft
+      - type: string
+        name: github_link
+        label: Github Link
+      - type: string
+        name: author
+        label: Author
+      - type: list
+        name: tags
+        label: Tags
+        items:
+          type: string
+      - type: string
+        name: bg_image
+        label: Bg Image
+      - type: string
+        name: description
+        label: Description
+  project:
+    type: page
+    label: Project
+    folder: project
+    match: '*'
+    fields:
+      - type: string
+        name: title
+        label: Title
+      - type: datetime
+        name: date
+        label: Date
+      - type: boolean
+        name: draft
+        label: Draft
+      - type: image
+        name: img
+        label: Img
+      - type: string
+        name: description
+        label: Description
+      - type: string
+        name: github
+        label: Github
+      - type: string
+        name: featured
+        label: Featured
+  website:
+    type: data
+    label: Website
+    fields:
+      - type: string
+        name: baseURL
+        label: Base URL
+      - type: string
+        name: languageCode
+        label: Language Code
+      - type: string
+        name: title
+        label: Title
+      - type: string
+        name: googleanalytics
+        label: Googleanalytics
+      - type: string
+        name: disqusShortname
+        label: Disqus Shortname
+      - type: number
+        name: Paginate
+        label: Paginate
+        subtype: int
+      - type: object
+        name: markup
+        label: Markup
+        fields:
+          - type: object
+            name: goldmark
+            label: Goldmark
+            fields:
+              - type: object
+                name: renderer
+                label: Renderer
+                fields:
+                  - type: boolean
+                    name: unsafe
+                    label: Unsafe
+      - type: object
+        name: taxonomies
+        label: Taxonomies
+        fields:
+          - type: string
+            name: tag
+            label: Tag
+          - type: string
+            name: category
+            label: Category
+      - type: boolean
+        name: enableEmoji
+        label: Enable Emoji
+      - type: object
+        name: params
+        label: Params
+        fields:
+          - type: number
+            name: version
+            label: Version
+            subtype: int
+          - type: image
+            name: favicon
+            label: Favicon
+          - type: string
+            name: description
+            label: Description
+          - type: list
+            name: customMenus
+            label: Custom Menus
+            items:
+              type: object
+              fields:
+                - type: string
+                  name: name
+                  label: Name
+                - type: string
+                  name: Url
+                  label: Url
+          - type: boolean
+            name: disable_home
+            label: Disable Home
+          - type: string
+            name: profile_image
+            label: Profile Image
+          - type: string
+            name: name
+            label: Name
+          - type: string
+            name: profession
+            label: Profession
+          - type: string
+            name: github
+            label: Github
+          - type: string
+            name: linkedin
+            label: Linkedin
+          - type: string
+            name: twitter
+            label: Twitter
+          - type: string
+            name: instagram
+            label: Instagram
+          - type: string
+            name: facebook
+            label: Facebook
+          - type: boolean
+            name: disable_about
+            label: Disable About
+          - type: string
+            name: descripe_l1_person
+            label: Descripe L 1 Person
+          - type: string
+            name: descripe_l2_person
+            label: Descripe L 2 Person
+          - type: list
+            name: skills
+            label: Skills
+            items:
+              type: object
+              fields:
+                - type: string
+                  name: name
+                  label: Name
+                - type: number
+                  name: percentage
+                  label: Percentage
+                  subtype: int
+          - type: boolean
+            name: disable_experience
+            label: Disable Experience
+          - type: list
+            name: experience
+            label: Experience
+            items:
+              type: object
+              fields:
+                - type: string
+                  name: company
+                  label: Company
+                - type: string
+                  name: role
+                  label: Role
+                - type: string
+                  name: startdate
+                  label: Startdate
+                - type: string
+                  name: enddate
+                  label: Enddate
+                - type: list
+                  name: featuredpoints
+                  label: Featuredpoints
+                  items:
+                    type: object
+                    fields:
+                      - type: string
+                        name: point
+                        label: Point
+          - type: boolean
+            name: disable_education
+            label: Disable Education
+          - type: list
+            name: education
+            label: Education
+            items:
+              type: object
+              fields:
+                - type: string
+                  name: degree
+                  label: Degree
+                - type: string
+                  name: branch
+                  label: Branch
+                - type: string
+                  name: university
+                  label: University
+                - type: string
+                  name: startedyear
+                  label: Startedyear
+                - type: string
+                  name: graduation
+                  label: Graduation
+          - type: boolean
+            name: disable_projects
+            label: Disable Projects
+          - type: list
+            name: projects
+            label: Projects
+            items:
+              type: model
+              models:
+                - object_am2lvo33c5
+                - object_jpolf9xyqr
+                - object_n33gzyy60v
+          - type: boolean
+            name: disable_achievements
+            label: Disable Achievements
+          - type: list
+            name: achievements
+            label: Achievements
+            items:
+              type: object
+              fields:
+                - type: string
+                  name: title
+                  label: Title
+                - type: string
+                  name: description
+                  label: Description
+                - type: image
+                  name: img
+                  label: Img
+          - type: boolean
+            name: disable_contact
+            label: Disable Contact
+          - type: string
+            name: contact_content
+            label: Contact Content
+          - type: string
+            name: email
+            label: Email
+          - type: boolean
+            name: socialiconfooter
+            label: Socialiconfooter
+          - type: boolean
+            name: recentposts
+            label: Recentposts
+          - type: boolean
+            name: showdescription
+            label: Showdescription
+          - type: boolean
+            name: tweet
+            label: Tweet
+          - type: date
+            name: copyright
+            label: Copyright
+          - type: boolean
+            name: socialicontop
+            label: Socialicontop
+          - type: boolean
+            name: useresume
+            label: Useresume
+          - type: string
+            name: customname
+            label: Customname
+          - type: string
+            name: resumelink
+            label: Resumelink
+          - type: boolean
+            name: usedothings
+            label: Usedothings
+          - type: list
+            name: Things
+            label: Things
+            items:
+              type: object
+              fields:
+                - type: string
+                  name: logo
+                  label: Logo
+                - type: string
+                  name: title
+                  label: Title
+                - type: string
+                  name: description
+                  label: Description
+          - type: string
+            name: disqus
+            label: Disqus
+          - type: boolean
+            name: custombackground
+            label: Custombackground
+          - type: string
+            name: background
+            label: Background
+          - type: string
+            name: backimg
+            label: Backimg
+          - type: boolean
+            name: contact
+            label: Contact
+          - type: string
+            name: action
+            label: Action
+          - type: string
+            name: emailname
+            label: Emailname
+          - type: string
+            name: messagename
+            label: Messagename
+          - type: string
+            name: profile
+            label: Profile
+          - type: string
+            name: job
+            label: Job
+          - type: string
+            name: resume
+            label: Resume
+  object_am2lvo33c5:
+    type: object
+    label: Object 1
+    fields:
+      - type: string
+        name: title
+        label: Title
+      - type: image
+        name: image
+        label: Image
+      - type: string
+        name: description
+        label: Description
+      - type: boolean
+        name: secoundarylink
+        label: Secoundarylink
+      - type: string
+        name: secoundaryurlname
+        label: Secoundaryurlname
+      - type: string
+        name: secoundaryurl
+        label: Secoundaryurl
+      - type: string
+        name: sourceurl
+        label: Sourceurl
+  object_jpolf9xyqr:
+    type: object
+    label: Object 2
+    fields:
+      - type: string
+        name: name
+        label: Name
+      - type: image
+        name: img
+        label: Img
+      - type: string
+        name: githublink
+        label: Githublink
+      - type: string
+        name: featuredlink
+        label: Featuredlink
+      - type: string
+        name: description
+        label: Description
+  object_n33gzyy60v:
+    type: object
+    label: Object 3
+    fields:
+      - type: string
+        name: name
+        label: Name
+      - type: image
+        name: img
+        label: Img
+      - type: string
+        name: githublink
+        label: Githublink
+      - type: string
+        name: featuredlink
+        label: Featuredlink
+      - type: string
+        name: description
+        label: Description
